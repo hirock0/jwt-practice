@@ -46,7 +46,7 @@ export async function LogOut(req, res) {
       .status(200)
       .json({ message: "LogOut", success: true });
   } catch (error) {
-    return res.status(500).json({ error: error.message, success: true });
+    return res.status(500).json({ message: "LogOut", success: true });
   }
 }
 
