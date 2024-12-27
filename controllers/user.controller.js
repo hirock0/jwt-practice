@@ -42,11 +42,7 @@ export async function Register(req, res) {
 export async function LogOut(req, res) {
   try {
     return res
-      .clearCookie("token",{
-        httpOnly: true,
-        sameSite: "None",
-        secure: true,
-      })
+      .clearCookie("token")
       .status(200)
       .json({ message: "LogOut", success: true });
   } catch (error) {
