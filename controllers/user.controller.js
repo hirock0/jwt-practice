@@ -27,9 +27,9 @@ export async function Register(req, res) {
 
     return res
       .cookie("token", token, {
-        httpOnly: false,
+        httpOnly: true,
         maxAge: 24 * 60 * 60 * 1000,
-        sameSite: "none",
+        sameSite: "Strict",
         secure: true,
       })
       .status(200)
@@ -42,7 +42,11 @@ export async function Register(req, res) {
 export async function LogOut(req, res) {
   try {
     return res
-      .clearCookie("token")
+      .clearCookie("token",{
+        httpOnly: true,
+        sameSite: "Strict",
+        secure: true,
+      })
       .status(200)
       .json({ message: "LogOut", success: true });
   } catch (error) {
