@@ -20,3 +20,4 @@ yarn-error.log*
 *.vscode-attach.json
 *.vscode-debug.json
 #macos
+.vercel

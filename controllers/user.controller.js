@@ -27,7 +27,7 @@ export async function Register(req, res) {
 
     return res
       .cookie("token", token, {
-        httpOnly: true,
+        httpOnly: false,
         maxAge: 24 * 60 * 60 * 1000,
         sameSite: "none",
         secure: true,
