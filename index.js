@@ -13,8 +13,6 @@ app.use(cookieParser(process.env.TOKEN_SECRET));
 const corsOptions = {
   origin: process.env.CLIENT_DOMAIN,
   credentials: true,
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
 };
 app.use(cors(corsOptions));
 
