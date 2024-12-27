@@ -17,7 +17,7 @@ const corsOptions = {
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
 };
 app.use(cors(corsOptions));
-app.options('*', cors());
+
 app.use("/api/user", userRoutes);
 
 app.listen(process.env.PORT, () => {
