@@ -29,7 +29,7 @@ export async function Register(req, res) {
       .cookie("token", token, {
         httpOnly: true,
         maxAge: 24 * 60 * 60 * 1000,
-        sameSite: "Strict",
+        sameSite: "None",
         secure: true,
       })
       .status(200)
@@ -44,7 +44,7 @@ export async function LogOut(req, res) {
     return res
       .clearCookie("token",{
         httpOnly: true,
-        sameSite: "Strict",
+        sameSite: "None",
         secure: true,
       })
       .status(200)
